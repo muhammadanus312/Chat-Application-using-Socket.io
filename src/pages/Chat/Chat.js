@@ -4,7 +4,8 @@ import Friends from "../../components/Friends/Friends";
 import style from "./Chat.module.css";
 import CurrentChat from "../../components/CurrentChat/CurrentChat";
 import { Link } from "react-router-dom";
-const Chat = () => {
+const Chat = ({socket,user}) => {
+  
   const room=[
     {
       id:1,
@@ -12,7 +13,6 @@ const Chat = () => {
       status:"online",
       lastMsg:'hi anas',
       time:'04:55 PM'
-
     },
     {
       id:2,
@@ -64,7 +64,6 @@ const clickMember=(element)=>{
                 )
               })
             }
-          
           </div>
           <div>
             <CurrentChat data={Current}/>
